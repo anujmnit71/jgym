@@ -2246,6 +2246,9 @@
     </profile>
     <version value="1.0" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="--enable-preview" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
