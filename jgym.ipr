@@ -2408,6 +2408,22 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="TaxCalculation" type="Application" factoryName="Application" editBeforeRun="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.jgym.warmups.day05.TaxCalculation" />
+      <module name="jgym" />
+      <option name="VM_PARAMETERS" value="--enable-preview -verbose:gc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.jgym.warmups.day05.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
       <option name="id" value="central" />

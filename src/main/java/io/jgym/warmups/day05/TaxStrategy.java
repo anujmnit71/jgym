@@ -1,5 +1,6 @@
 package io.jgym.warmups.day05;
 
-public interface TaxStrategy {
+public sealed interface TaxStrategy permits CompanyTaxStrategy,
+        IndividualTaxStrategy, TrustTaxStrategy {
     double calculateTax(double income);
 }

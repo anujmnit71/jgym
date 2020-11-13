@@ -1,6 +1,6 @@
 package io.jgym.warmups.day05;
 
-public class CompanyTaxStrategy implements TaxStrategy {
+public final class CompanyTaxStrategy implements TaxStrategy {
     public double calculateTax(double income) {
         return income * 0.24;
     }

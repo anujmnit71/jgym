@@ -1,6 +1,6 @@
 package io.jgym.warmups.day05;
 
-public class EmployeeTaxStrategy implements TaxStrategy {
+public final class EmployeeTaxStrategy extends IndividualTaxStrategy {
     /*
       South African Tax Law Feb 2020
       Up to R195,850: 18% of taxable income
