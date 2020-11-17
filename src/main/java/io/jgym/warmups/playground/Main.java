@@ -1,8 +1,9 @@
-package io.jgym.warmups;
+package io.jgym.warmups.playground;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
+// https://twitter.com/volker_simonis/status/1326592733008564226
 public class Main {
     private static ExecutorService executor = Executors.newFixedThreadPool(2);
     private static int iterations = 10000000;
