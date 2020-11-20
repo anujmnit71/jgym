@@ -5,6 +5,6 @@ public interface Friendly {
         // Thanks Thomas :-)
         System.out.println("Good morning, " + name + "!");
     }
+    void hug();
+    void highFive();
 }
-
-
