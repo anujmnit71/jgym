@@ -6,3 +6,6 @@
 
 06: Creating our own Spliterator
 07: Computational time complexity vs brute force parallelism in searching for Mersenne Primes
+08: DaemonThreadFactory
+09: Infinite loop in wait with interrupt
+10:
