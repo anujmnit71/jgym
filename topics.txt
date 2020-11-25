@@ -1,15 +1,15 @@
-01: SocketFactory for creating millions of sockets
-02: Escape Analysis of byte[] in read() and write()
-03: Counted loops and searching for primes
-04: Queues in Java
-05: Sealed classes
+01: Tips&Tricks - SocketFactory for creating millions of sockets
+02: Performance - Escape Analysis of byte[] in read() and write()
+03: Performance - Counted loops and searching for primes
+04: Collections - Queues in Java
+05: New Java - Sealed classes
 
-06: Creating our own Spliterator
-07: Computational time complexity vs brute force parallelism in searching for Mersenne Primes
-08: DaemonThreadFactory
-09: Infinite loop in wait with interrupt
-10: Calling default methods on interfaces that we do not implement
+06: Collections - Creating our own Spliterator
+07: Performance - Computational time complexity vs brute force parallelism in searching for Mersenne Primes
+08: Concurrency - DaemonThreadFactory
+09: Concurrency - Infinite loop in wait with interrupt
+10: Tips&Tricks - Calling default methods on interfaces that we do not implement
 
-11: Puzzle with compound operators and implicit casts
-12: How deserializing records differs from ordinary classes
-13: Lesser known Maps
+11: Language - Puzzle with compound operators and implicit casts
+12: New Java - How deserializing records differs from ordinary classes
+13: Collections - Lesser known Maps
