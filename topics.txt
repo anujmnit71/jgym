@@ -12,3 +12,4 @@
 
 11: Puzzle with compound operators and implicit casts
 12: How deserializing records differs from ordinary classes
+13: Lesser known Maps
