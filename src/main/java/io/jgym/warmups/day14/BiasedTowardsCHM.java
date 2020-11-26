@@ -19,6 +19,7 @@ public class BiasedTowardsCHM {
         long time = System.nanoTime();
         try {
             LongStream.range(0, 1_000_000)
+                    .parallel()
                     .forEach(number -> squares.put(number * number, number));
         } finally {
             time = System.nanoTime() - time;
