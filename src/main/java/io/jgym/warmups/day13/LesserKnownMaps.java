@@ -6,8 +6,8 @@ import java.util.concurrent.*;
 public class LesserKnownMaps {
     public static void main(String... args) {
         Map<?, ?>[] maps = {
-                new ConcurrentSkipListMap<>(),
                 new EnumMap<>(Thread.State.class),
+                new ConcurrentSkipListMap<>(),
                 new LinkedHashMap<>(),
                 new IdentityHashMap<>(),
                 new WeakHashMap<>()
