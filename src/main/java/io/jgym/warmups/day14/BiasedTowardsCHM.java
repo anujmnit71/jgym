@@ -12,7 +12,10 @@ public class BiasedTowardsCHM {
     }
 
     private static void test() {
-        Map<Long, Long> squares = new HashMap<>();
+        System.gc();
+        System.gc();
+        System.gc();
+        Map<Long, Long> squares = new ConcurrentHashMap<>();
         long time = System.nanoTime();
         try {
             LongStream.range(0, 1_000_000)
