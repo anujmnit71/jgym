@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.concurrent.locks.*;
 
 public class IntList {
-    private static final int OPTIMISTIC_SPIN = 0;
+    private static final int OPTIMISTIC_SPIN = 1;
     private final StampedLock sl = new StampedLock();
     private int[] arr = new int[10];
     private int size = 0;
