@@ -16,4 +16,5 @@
 14: Concurrency - HashMap vs ConcurrentHashMap
 15: Performance - Strings with zero hashCode
 
-16: Concurrency -
+16: Concurrency - Improved throughput with StampedLock versus synchronized
+17: Language - What is the best way to loop over a collection?
