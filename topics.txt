@@ -18,3 +18,4 @@
 
 16: Concurrency - Improved throughput with StampedLock versus synchronized
 17: Language - What is the best way to loop over a collection?
+18: Performance - Calculating object allocation from ThreadMXBean
