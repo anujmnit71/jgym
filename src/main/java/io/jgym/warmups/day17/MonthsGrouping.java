@@ -154,26 +154,29 @@ public class MonthsGrouping {
      * Java 8 - Iterating via stream
      */
     private static Map<Character, List<String>> iterateJava8StreamGroupingBy(List<String> months) {
-        Map<Character, List<String>> lastLetterToMonthsMap = months.stream()
+        return months.stream()
                 .collect(Collectors.groupingBy(
-                        month -> month.charAt(month.length() - 1),
-                        Collectors.mapping(Function.identity(),
-                                Collectors.toList())));
-        return lastLetterToMonthsMap;
+                        month -> month.charAt(month.length() - 1)));
     }
 
     /**
      * Java 10 - Making map and lists immutable
      */
     private static Map<Character, List<String>> iterateJava10ImmutableCollections(List<String> months) {
-        Map<Character, List<String>> lastLetterToMonthsMap =
-                Map.copyOf(months.stream()
-                        .collect(Collectors.groupingBy(
-                                month -> month.charAt(month.length() - 1),
-                                Collectors.mapping(Function.identity(),
-                                        Collectors.toUnmodifiableList()))));
-        return lastLetterToMonthsMap;
+        return Map.copyOf(months.stream()
+                .collect(Collectors.groupingBy(
+                        month -> month.charAt(month.length() - 1),
+                        Collectors.mapping(Function.identity(),
+                                Collectors.toUnmodifiableList()))));
+
+        // alternatively
+        // return months.stream()
+        //         .collect(Collectors.groupingBy(
+        //                 month -> month.charAt(month.length() - 1),
+        //                 Collectors.mapping(Function.identity(),
+        //                         Collectors.toUnmodifiableList())))
+        //         .entrySet().stream().collect(Collectors.toUnmodifiableMap(
+        //                 Map.Entry::getKey, Map.Entry::getValue
+        //         ));
     }
-
-
 }
