@@ -1,6 +1,7 @@
 package io.jgym.warmups.day20;
 
 import java.math.*;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.stream.*;
 
@@ -38,8 +39,14 @@ public class FactorialDemoParallel {
             return BigInteger.valueOf(from);
         }
         int mid = (from + to) >>> 1;
-        var left = factorial(from, mid);
+        var leftTask = new RecursiveTask<BigInteger>() {
+            protected BigInteger compute() {
+                return factorial(from, mid);
+            }
+        };
+        leftTask.fork();
         var right = factorial(mid + 1, to);
+        var left = leftTask.join();
         return left.multiply(right);
     }
 }
