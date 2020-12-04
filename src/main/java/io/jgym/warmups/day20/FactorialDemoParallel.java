@@ -3,13 +3,13 @@ package io.jgym.warmups.day20;
 import java.math.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
-import java.util.stream.*;
 
 public class FactorialDemoParallel {
     // https://www.javaspecialists.eu/courses/blackfriday20
     private static LongAccumulator bestTime = new LongAccumulator(
             Long::min, Long.MAX_VALUE
     );
+
     public static void main(String... args) {
         for (int i = 0; i < 5; i++) {
             test();
@@ -30,9 +30,21 @@ public class FactorialDemoParallel {
     }
 
     private static BigInteger factorial(int n) {
-        return factorial(0, n);
+        return factorial(0, n).join();
     }
 
+    private static CompletableFuture<BigInteger> factorial(int from, int to) {
+        if (from == to) {
+            if (from == 0) return CompletableFuture.completedFuture(BigInteger.ONE);
+            return CompletableFuture.completedFuture(BigInteger.valueOf(from));
+        }
+        int mid = (from + to) >>> 1;
+        var left = factorial(from, mid);
+        var right = factorial(mid + 1, to);
+        return left.thenCombineAsync(right, BigInteger::multiply);
+    }
+
+    /*
     private static BigInteger factorial(int from, int to) {
         if (from == to) {
             if (from == 0) return BigInteger.ONE;
@@ -49,4 +61,5 @@ public class FactorialDemoParallel {
         var left = leftTask.join();
         return left.multiply(right);
     }
+     */
 }
