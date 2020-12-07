@@ -20,3 +20,6 @@
 17: Language - What is the best way to loop over a collection?
 18: Performance - Calculating object allocation from ThreadMXBean
 19: Puzzle - Sequential vs Parallel Stream performance
+20: Concurrenty - Parallelizing using ForkJoin and CompletableFuture
+
+21: Tips&Tricks - Throwing exceptions as unchecked
