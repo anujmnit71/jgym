@@ -23,3 +23,4 @@
 20: Concurrenty - Parallelizing using ForkJoin and CompletableFuture
 
 21: Tips&Tricks - Throwing exceptions as unchecked
+22: Collections - Different types of iterators: Broken, fail-fast, snapshot,
