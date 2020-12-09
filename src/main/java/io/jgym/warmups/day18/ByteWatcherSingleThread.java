@@ -52,7 +52,7 @@ public class ByteWatcherSingleThread {
         long calibrate = threadAllocatedBytes();
         // calibrate
         for (int repeats = 0; repeats < 10; repeats++) {
-            for (int i = 0; i < 10_000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 // run a few loops to allow for startup anomalies
                 calibrate = threadAllocatedBytes();
             }
@@ -79,7 +79,7 @@ public class ByteWatcherSingleThread {
 
     long threadAllocatedBytes() {
         try {
-            return (long) mBeanServer.invoke(
+            return (Long) mBeanServer.invoke(
                 name,
                 GET_THREAD_ALLOCATED_BYTES,
                 PARAMS,
