@@ -16,7 +16,17 @@ public class StringSubstring {
 
         Callable<?> creator = new Callable<Object>() {
             public Object call() throws Exception {
-                return song.substring(0, 4);
+                CharSequence cs = song;
+                int last = 0;
+                CharSequence lastWord = null;
+                for (int i = 0; i < cs.length(); i++) {
+                    char c = cs.charAt(i);
+                    if (c == ' ' || c == '\n') {
+                        lastWord = cs.subSequence(last, i);
+                        last = i + 1;
+                    }
+                }
+                return last;
             }
         };
 
