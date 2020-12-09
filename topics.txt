@@ -24,3 +24,4 @@
 
 21: Tips&Tricks - Throwing exceptions as unchecked
 22: Collections - Different types of iterators: Broken, fail-fast, snapshot, weakly-consistent
+23: Performance - Effective subSequences of Strings
