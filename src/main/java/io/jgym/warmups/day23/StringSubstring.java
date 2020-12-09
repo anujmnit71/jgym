@@ -13,10 +13,12 @@ public class StringSubstring {
                             "little lamb, little lamb,\n" +
                             "Mary had a little lamb,\n" +
                             "it's fleece was white as snow.\n";
+        // see https://www.javaspecialists.eu/archive/Issue230-String-Substring.html
+        final CharSequence subbable = new SubbableString(song.toCharArray());
 
         Callable<?> creator = new Callable<Object>() {
             public Object call() throws Exception {
-                CharSequence cs = song;
+                CharSequence cs = subbable;
                 int last = 0;
                 CharSequence lastWord = null;
                 for (int i = 0; i < cs.length(); i++) {
@@ -26,7 +28,7 @@ public class StringSubstring {
                         last = i + 1;
                     }
                 }
-                return last;
+                return lastWord;
             }
         };
 
