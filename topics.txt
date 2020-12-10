@@ -25,3 +25,11 @@
 21: Tips&Tricks - Throwing exceptions as unchecked
 22: Collections - Different types of iterators: Broken, fail-fast, snapshot, weakly-consistent
 23: Performance - Effective subSequences of Strings
+24: Collections - Sets based on Maps
+25: Language - Synthetic methods for accessing inner class private members (TBD)
+
+26: Tips&Tricks - Advantages of VarHandle over java.lang.reflect.Field (TBD)
+27: Concurrency - Asserting locks (TBD)
+28: Language - Once Upon an Oak (TBD)
+29: Tips&Tricks - Hooking into the shutdown call (TBD)
+30: Performance - Writing a monitoring JDBC driver in 8 minutes using dynamic proxies (TBD)
