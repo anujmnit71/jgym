@@ -1,6 +1,6 @@
 package io.jgym.warmups.day25;
 
-public class BankAccount {
+public final class BankAccount {
     private double balance;
 
     public BankAccount(double balance) {
