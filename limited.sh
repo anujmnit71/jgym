@@ -11,4 +11,4 @@ cd ../../../
 
 RUNCLASS=`grep -l "public static void main" src/main/java/io/jgym/warmups/day$1/*.java | sed -e 's/.*\/\(.*\)\.java/\1/'`
 echo Executing io/jgym/warmups/day$1/$RUNCLASS
-sudo docker run -it --cpuset-cpus="0" -v $PWD/out/production/jgym:/mnt/jgym openjdk java -showversion $2 -cp /mnt/jgym io/jgym/warmups/day$1/$RUNCLASS
+docker run -it --cpuset-cpus="0" -v $PWD/out/production/jgym:/mnt/jgym openjdk java -showversion $2 -cp /mnt/jgym io/jgym/warmups/day$1/$RUNCLASS
