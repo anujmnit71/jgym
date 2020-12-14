@@ -13,13 +13,8 @@ public class DeadlockDemo {
 
         tester.checkThatCodeDoesNotDeadlock(() -> {
             ExecutorService pool = Executors.newFixedThreadPool(2);
-            Future<?> transfer1 = pool.submit(() -> {
-                    fnb.transferTo(absa, 100);
-            });
-            Future<?> transfer2 = pool.submit(() ->
-            {
-                    absa.transferTo(fnb, 100);
-            });
+            Future<?> transfer1 = pool.submit(() -> fnb.transferTo(absa, 100));
+            Future<?> transfer2 = pool.submit(() -> absa.transferTo(fnb, 100));
             try {
                 transfer1.get();
                 transfer2.get();
