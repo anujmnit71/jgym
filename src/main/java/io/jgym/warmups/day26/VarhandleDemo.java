@@ -11,8 +11,31 @@ public class VarhandleDemo {
     // not boxing
     public static void main(String... args) throws ReflectiveOperationException {
         var arthur = new DontPanic(1000, 42);
+        System.out.println("arthur = " + arthur);
+        meaningOfLifeField.set(arthur, 6);
+        happynessField.set(arthur, -1000);
+        ageField.set(arthur, 43);
+        System.out.println("arthur = " + arthur);
+        System.out.println("arthur.getMeaningOfLife() = " + arthur.getMeaningOfLife());
+        System.out.println(meaningOfLifeField.get(arthur));
 
         var ford = new DontPanic(1000, 42);
+        System.out.println("ford = " + ford);
+        // MEANING_OF_LIFE.set(ford, 6);
+        // HAPPYNESS.set(ford, -1000);
+        AGE.set(ford, 43);
+        System.out.println("ford = " + ford);
+
+        int currentAge;
+        do {
+            currentAge = (int) AGE.get(ford);
+        } while(!AGE.compareAndSet(ford, currentAge, currentAge + 1));
+        System.out.println("ford = " + ford);
+
+        while(true) {
+            // happynessField.get(arthur);
+            HAPPYNESS.get(ford);
+        }
     }
 
     private static final Field meaningOfLifeField, happynessField, ageField;
