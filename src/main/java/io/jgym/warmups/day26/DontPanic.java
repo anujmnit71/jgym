@@ -19,4 +19,8 @@ public class DontPanic {
                 ", age=" + age +
                 '}';
     }
+
+    public int getMeaningOfLife() {
+        return meaningOfLife;
+    }
 }

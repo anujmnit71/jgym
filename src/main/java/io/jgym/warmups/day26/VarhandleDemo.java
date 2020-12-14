@@ -7,11 +7,10 @@ import java.lang.reflect.*;
 
 public class VarhandleDemo {
     // not writing to final fields
-    // not boxing
     // atomic updates
+    // not boxing
     public static void main(String... args) throws ReflectiveOperationException {
         var arthur = new DontPanic(1000, 42);
-
 
         var ford = new DontPanic(1000, 42);
     }
