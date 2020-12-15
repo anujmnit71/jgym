@@ -3,8 +3,7 @@ package io.jgym.warmups.day27;
 import java.util.stream.*;
 
 public class LockAssertion {
-    private static volatile int counter;
-
+    private static int counter;
     public static void main(String... args) {
         for (int i = 0; i < 3; i++) {
             test(false, false);
@@ -24,6 +23,8 @@ public class LockAssertion {
         for (int depth = 0; depth <= 10; depth++) {
             test(depth, synchronize, parallel);
         }
+        System.out.println("counter = " + counter);
+        counter = 0;
         System.out.println();
     }
 
@@ -47,7 +48,10 @@ public class LockAssertion {
     }
 
     private static void action(int depth, boolean synchronize) {
-        if (depth == 0) return;
+        if (depth == 0) {
+            counter++;
+            return;
+        }
         if (synchronize) {
             synchronized (LockAssertion.class) {
                 action(depth - 1, synchronize);
