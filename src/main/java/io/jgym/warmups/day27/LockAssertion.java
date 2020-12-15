@@ -30,7 +30,7 @@ public class LockAssertion {
     private static void test(int depth, boolean synchronize, boolean parallel) {
         long time = System.nanoTime();
         try {
-            IntStream range = IntStream.range(0, 1_000_000);
+            IntStream range = IntStream.range(0, 2_000_000);
             if (parallel) range = range.parallel();
             range.forEach(i -> {
                 callActionSynchronized(depth, synchronize);
