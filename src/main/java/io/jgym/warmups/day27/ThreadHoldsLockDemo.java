@@ -2,7 +2,11 @@ package io.jgym.warmups.day27;
 
 import java.util.stream.*;
 
-public class LockAssertion {
+// 1. Search for usages of Thread.holdsLock()
+// 2. Explain why someone would use it
+// 3. Explain LockAssertionDemo
+
+public class ThreadHoldsLockDemo {
     private static int counter;
     public static void main(String... args) {
         for (int i = 0; i < 3; i++) {
@@ -53,11 +57,11 @@ public class LockAssertion {
             return;
         }
         if (synchronize) {
-            synchronized (LockAssertion.class) {
+            synchronized (ThreadHoldsLockDemo.class) {
                 action(depth - 1, synchronize);
             }
         } else {
-            assert Thread.holdsLock(LockAssertion.class);
+            assert Thread.holdsLock(ThreadHoldsLockDemo.class);
             action(depth - 1, synchronize);
         }
     }
