@@ -1,12 +1,10 @@
 package io.jgym.warmups.day27;
 
+import java.util.concurrent.locks.*;
 import java.util.stream.*;
 
-// 1. Search for usages of Thread.holdsLock()
-// 2. Explain why someone would use it
-// 3. Explain ThreadHoldsLockDemo
-// 4. Run demo, looking at interesting results and ea
-public class ThreadHoldsLockDemo {
+public class ThreadHoldsLockReentrantLockDemo {
+    private static final ReentrantLock lock = new ReentrantLock();
     private static int counter;
     public static void main(String... args) {
         for (int i = 0; i < 3; i++) {
@@ -22,7 +20,7 @@ public class ThreadHoldsLockDemo {
     }
 
     private static void test(boolean synchronize, boolean parallel) {
-        System.out.println("Test with " + (synchronize ? "synchronized" : "holdsLock()")
+        System.out.println("Test with " + (synchronize ? "ReentrantLock" : "isHeldByCurrentThread()")
                 + " running " + (parallel ? "in parallel" : "sequentially"));
         for (int depth = 0; depth <= 10; depth++) {
             test(depth, synchronize, parallel);
@@ -47,8 +45,13 @@ public class ThreadHoldsLockDemo {
         }
     }
 
-    public static synchronized void callActionSynchronized(int depth, boolean synchronize) {
-        action(depth, synchronize);
+    public static  void callActionSynchronized(int depth, boolean synchronize) {
+        lock.lock();
+        try {
+            action(depth, synchronize);
+        } finally {
+            lock.unlock();
+        }
     }
 
     private static void action(int depth, boolean synchronize) {
@@ -57,11 +60,14 @@ public class ThreadHoldsLockDemo {
             return;
         }
         if (synchronize) {
-            synchronized (ThreadHoldsLockDemo.class) {
-                action(depth - 1, synchronize);
-            }
+                lock.lock();
+                try {
+                    action(depth - 1, synchronize);
+                } finally {
+                    lock.unlock();
+                }
         } else {
-            assert Thread.holdsLock(ThreadHoldsLockDemo.class);
+            assert lock.isHeldByCurrentThread();
             action(depth - 1, synchronize);
         }
     }
