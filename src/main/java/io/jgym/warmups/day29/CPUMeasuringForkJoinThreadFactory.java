@@ -4,7 +4,7 @@ import java.lang.management.*;
 import java.util.*;
 import java.util.concurrent.*;
 
-// -Djava.util.ForkJoinPool.common.threadFactory=io.jgym.warmups.day29.CPUMeasuringForkJoinThreadFactory
+// -Djava.util.concurrent.ForkJoinPool.common.threadFactory=io.jgym.warmups.day29.CPUMeasuringForkJoinThreadFactory
 public class CPUMeasuringForkJoinThreadFactory implements ForkJoinPool.ForkJoinWorkerThreadFactory {
     private final ForkJoinPool.ForkJoinWorkerThreadFactory defaultFactory =
             ForkJoinPool.defaultForkJoinWorkerThreadFactory; // cannot be null
