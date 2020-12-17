@@ -30,9 +30,9 @@
 
 26: Tips&Tricks - Advantages of VarHandle over java.lang.reflect.Field
 27: Concurrency - Asserting locks
-28: Language - Once Upon an Oak (TBD)
-29: Tips&Tricks - Hooking into the shutdown call (TBD)
-30: Performance - Writing a monitoring JDBC driver in 8 minutes using dynamic proxies (TBD)
+28: Language - Once Upon an Oak
+29: Tips&Tricks - Hooking into the shutdown call
+30: TBD -
 
 
 
