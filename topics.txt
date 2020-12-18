@@ -32,10 +32,4 @@
 27: Concurrency - Asserting locks
 28: Language - Once Upon an Oak
 29: Tips&Tricks - Hooking into the shutdown call
-30: TBD -
-
-
-
-Future topics:
-
-Language - Synthetic methods for accessing inner class private members (TBD)
+30: Language - Synthetic methods for accessing inner class private members

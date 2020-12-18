@@ -10,7 +10,7 @@ public class InnerClassMagic {
         }
     }
 
-    public static void main(String... args) {
+    public static void main(String[] args) {
         InnerClassMagic outer = new InnerClassMagic();
         Inner inner = outer.new Inner();
         System.out.println("outer.i = " + outer.i);
