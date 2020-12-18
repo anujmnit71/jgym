@@ -9,7 +9,7 @@ public class NestedBug2 {
 
     private class ComplexBug extends Insect {
         public void printDetails() {
-            if (wings != null) { // line 8
+            if (wings != null) { // line 12
                 System.out.println(wings);
             }
         }

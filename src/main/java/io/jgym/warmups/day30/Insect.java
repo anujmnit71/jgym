@@ -3,7 +3,7 @@ package io.jgym.warmups.day30;
 public abstract class Insect {
     public Insect() {
         System.out.println("Inside Insect() Constructor");
-        printDetails();
+        printDetails();  // don't ever do this!
     }
 
     public void printDetails() {
