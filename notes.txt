@@ -1,0 +1,33 @@
+Welcome to our JGym.IO Daily Warmup! The sources for our sessions are available on: git clone javaspecialists.eu/git/jgym/jgym-5458.git username: jgym5458 password: RoARzVTI We will use the latest JDK-16 early access build from jdk.java.net/16 and IntelliJ IDEA. We have a slack channel #jgym-rats - get an invite on javaspecialists.eu/slack Make sure to have your coffee ready! Kind regards from Heinz (Your friendly JGym.IO instructor) Oh and also, we have Black Friday specials until the 4th of December: javaspecialists.eu/courses/blackfriday20
+
+
+
+Day 3:
+JCTools : useful better performance queues
+CLQ
+LBQ
+
+Day 5:
+--enable-preview
+
+
+Day 22:
+snapshot iterator
+weakly consistent iterator
+fail-safe iterator
+items.removeIf // O(n) best approach
+random nonsense iterator
+
+
+Day xx:
+-GC --doEscapeanalysis
+Polymorphic signature , 
+
+Day 27:
+-ea : Configuration-> VM options , set assertions ON
+Threads.holdlock() : gets slower than syncronized if assertions are ON
+method size increases with assertions ON , hence disabled in JDK code
+
+day 30
+cfr decompiler
+disassemble : javap -c -private io.jgym.warmups.Nested*
